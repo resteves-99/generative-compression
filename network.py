@@ -1,7 +1,7 @@
 """ Modular components of computational graph
     JTan 2018
 """
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from utils import Utils
 
 class Network(object):

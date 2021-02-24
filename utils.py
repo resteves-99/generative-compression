@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Diagnostic helper functions for Tensorflow session
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import numpy as np
 import os, time
 import matplotlib as mpl
