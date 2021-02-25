@@ -7,7 +7,8 @@ train_data, test_data, validation_data = tfds.load(
                                                     'celeb_a',
                                                     split=['train', 'test', 'validation'],
                                                     data_dir='./data',
-                                                    download=True
+                                                    download=True,
+    
                                                 )
 
 train_paths = []
@@ -22,6 +23,8 @@ for ex in train_data:
     image.save(path, format='PNG')
     train_paths.append(path)
 
+    if i%10000==0: print('train conversion ', i, '/162770')
+
 test_paths = []
 i = 0
 for ex in test_data:
@@ -33,6 +36,8 @@ for ex in test_data:
 
     image.save(path, format='PNG')
     test_paths.append(path)
+    
+    if i%5000==0: print('train conversion ', i, '/19962')
 
 
 validation_paths = []
@@ -46,6 +51,8 @@ for ex in validation_data:
 
     image.save(path, format='PNG')
     validation_paths.append(path)
+    
+    if i%5000==0: print('train conversion ', i, '/19867')
 
 train_df = pd.DataFrame(data=train_paths, columns='path', key='df')
 train_hdf = train_df.to_hdf('./data/celeb_paths/train_paths.h5')
