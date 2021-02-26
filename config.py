@@ -2,7 +2,7 @@
 
 class config_train(object):
     mode = 'gan-train'
-    num_epochs = 512
+    num_epochs = 5
     batch_size = 1
     ema_decay = 0.999
     G_learning_rate = 2e-4
@@ -25,7 +25,7 @@ class config_train(object):
     # Compression
     lambda_X = 12
     channel_bottleneck = 8
-    sample_noise = True
+    sample_noise = False
     use_vanilla_GAN = False
     use_feature_matching_loss = True
     upsample_dim = 256
