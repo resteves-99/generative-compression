@@ -1,4 +1,39 @@
-# generative-compression
+# generative-compression readme
+## dependencies
+In order to train or run the model the following packages are required.
+```bash
+python 3.6
+tensorflow 1.8
+pandas
+matplotlib
+seaborn
+pytables
+```
+In order to download the celeb_a dataset using the save_data.py file the above packages are required along with.
+```bash
+tensorflow_datasets
+```
+
+## Testing
+Reconstructed samples from the first baseline can be found at ./samples/celeb_a. This is the way I recommend you check the current status of the baseline as other methods are more complicated.
+
+Once I am able to upload checkpoints you can test the model by compressing a single image using
+```bash
+$ python3 compress.py -r /path/to/model/checkpoint -i /path/to/image -o path/to/output/image
+```
+
+You can train your own model by running 
+```bash
+#download the data
+#check the python file and change the directories so that it saves the files to a place that exists
+python save_data.py
+
+#change the config.py file to change hyperparameters
+python train.py --name network_name
+```
+
+
+# original generative-compression readme
 
 TensorFlow Implementation for learned compression of images using Generative Adversarial Networks. The method was developed by Agustsson et. al. in [Generative Adversarial Networks for Extreme Learned Image Compression](https://arxiv.org/abs/1804.02958). The proposed idea is very interesting and their approach is well-described.
 
