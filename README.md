@@ -19,7 +19,7 @@ Reconstructed samples from the first baseline can be found at ./samples/celeb_a.
 
 Once I am able to upload checkpoints you can test the model by compressing a single image using
 ```bash
-$ python3 compress.py -r /path/to/model/checkpoint -i /path/to/image -o path/to/output/image
+python compress.py -r /path/to/model/checkpoint -i /path/to/image -o path/to/output/image
 ```
 
 You can train your own model by running 
