@@ -48,8 +48,10 @@ class Data(object):
             # or if you are using your own custom dataset, otherwise
             # the model is shape-agnostic as it is fully convolutional
 
-            # im.set_shape([512,1024,3])  # downscaled cityscapes
-
+            # image.set_shape([512,1024,3])  # downscaled cityscapes
+            image =  tf.image.resize_image_with_crop_or_pad(image, 224, 192)
+            # image.set_shape([218, 178, 3])
+            
             if use_conditional_GAN:
                 # Semantic map only enabled for cityscapes
                 semantic_map = _image_decoder(semantic_map_path)           
